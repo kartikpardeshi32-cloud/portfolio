@@ -272,7 +272,7 @@ const DEFAULT_PROJECTS = [
     description: 'Designed and modeled an automatic punching machine utilizing a Geneva mechanism for precise intermittent movement and synchronized stamping operations.',
     tags: ['Geneva Mechanism', 'SolidWorks', 'Mechanism Design', 'Automation'],
     link: 'https://ik.imagekit.io/ongzd2ncj/Screenshot%202026-07-21%20204407.png?updatedAt=1784903077950',
-    modelUrl: 'models/final.glb', // Corrected path to point to your GLB file inside models/
+    modelUrl: 'models/final.glb',
     hasImage: true
   },
   {
@@ -321,7 +321,6 @@ function open3DViewer(modelUrl, title) {
   const container = document.getElementById('modal-body-container');
   document.getElementById('modal-project-title').textContent = title + ' — 3D Viewport';
   
-  // Inject Google's <model-viewer> web component dynamically
   container.innerHTML = `
     <model-viewer 
       src="${escapeHtml(modelUrl)}" 
@@ -339,7 +338,7 @@ function open3DViewer(modelUrl, title) {
 
 function close3DViewer() {
   document.getElementById('viewer-modal').classList.remove('active');
-  document.getElementById('modal-body-container').innerHTML = ''; // Clean up memory
+  document.getElementById('modal-body-container').innerHTML = '';
 }
 
 function renderProjects() {
